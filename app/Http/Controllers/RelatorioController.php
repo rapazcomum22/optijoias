@@ -39,4 +39,14 @@ class RelatorioController extends Controller
         $query = Cliente::all();
         return view('relatorio.index-cliente', ['model' => $query]);
     }
+
+    public function relatorioClienteShow($id)
+    {
+        $query = Cliente::find($id);
+        $model = Cliente::find($id)->id;
+        $listarOS = OrdemServico::where('id_cliente', $model)->orderBy('data1')->get();
+
+        return view('relatorio.relatorio-cliente-show', ['model' => $model, 'listarOS' => $listarOS, 'query' => $query]);
+
+    }
 }

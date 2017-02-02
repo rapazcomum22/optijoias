@@ -26,7 +26,7 @@
                         <td>{{$m->nome}}</td>
                         <td>{{$m->rg}}</td>
                         <td>{{$m->cpf}}</td>
-                        <td width="100px"><a href="{{route('cliente-edit', ['id' => $m->id])}}" class="btn btn-sm btn-block btn-danger"><i class="glyphicon glyphicon-eye-open"></i> Visualizar Hitórico / Imprimir</a></td>
+                        <td width="100px"><a href="{{route('relatorio-cliente-show', ['id' => $m->id])}}" class="btn btn-sm btn-block btn-danger"><i class="glyphicon glyphicon-eye-open"></i> Visualizar Hitórico / Imprimir</a></td>
                     </tr>
                 @endforeach
                 </tbody>

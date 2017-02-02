@@ -54,7 +54,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/ordem-servico/edit/{id}', ['as' => 'ordem-servico-edit', 'uses' => 'OrdemServicoController@edit']);
     Route::post('/ordem-servico/update/{id}', ['as' => 'ordem-servico-update', 'uses' => 'OrdemServicoController@update']);
     Route::get('/ordem-servico/view/{id?}',   ['as' => 'ordem-servico-show', 'uses'    => 'OrdemServicoController@show']);
-    Route::get('/ordem-servico/view/{id?}',   ['as' => 'ordem-servico-show', 'uses'    => 'OrdemServicoController@show']);
     Route::get('/ordem-servico/destroy/{id}', ['as' => 'ordem-servico-excluir', 'uses' => 'OrdemServicoController@destroy']);
 
 //    ROTAS ARMACAO
@@ -75,5 +74,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/relatorio', ['as' => 'relatorio-geral-index', 'uses' => 'RelatorioController@indexGeral']);
     Route::get('/relatorio/geral', ['as' => 'relatorio-geral-filtro', 'uses' => 'RelatorioController@relatorioGeral']);
     Route::get('/relatorio/cliente', ['as' => 'relatorio-cliente-index', 'uses' => 'RelatorioController@indexCliente']);
-    Route::get('/relatorio/cliente/ordem-servico', ['as' => 'relatorio-cliente-filtro', 'uses' => 'RelatorioController@relatorioCliente']);
+    Route::get('/relatorio/cliente/ordem-servico/view/{id}', ['as' => 'relatorio-cliente-show', 'uses' => 'RelatorioController@relatorioClienteShow']);
 });

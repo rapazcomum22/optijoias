@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
+    <link rel="shortcut icon" type="image/x-icon" href="/public/favicon.ico">
     <link rel="stylesheet" href="/public/css/font-awesome.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 

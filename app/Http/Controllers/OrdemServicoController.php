@@ -27,7 +27,6 @@ class OrdemServicoController extends Controller
     public function index()
     {
         $query = OrdemServico::OrdemServico();
-//        dd($query);
         return view('ordem-servico.index', ['model' => $query]);
     }
 
@@ -50,7 +49,7 @@ class OrdemServicoController extends Controller
         $u->conta                   = $request->get('conta');
         $u->saldo                   = $request->get('saldo');
         $u->optometrista            = $request->get('optometrista');
-        $u->data1                   = $request->get('data1');
+        $u->data1                   = date('Y-m-d', strtotime(str_replace('/', '-', $request->get('data1'))));
 //        LONGE OLHO DIREITO
         $u->longe_od_esf            = $request->get('longe_od_esf');
         $u->longe_od_cil            = $request->get('longe_od_cil');
@@ -86,7 +85,7 @@ class OrdemServicoController extends Controller
         $u->dnp_e                   = $request->get('dnp_e');
         $u->alt                     = $request->get('alt');
         $u->observacao              = $request->get('observacao');
-        $u->data_final              = $request->get('data_final');
+        $u->data_final              = date('Y-m-d', strtotime(str_replace('/', '-', $request->get('data_final'))));
 //        dd($request);
 
         $u->save();
@@ -115,7 +114,7 @@ class OrdemServicoController extends Controller
         $e->conta                   = $eUpdate['conta'];
         $e->saldo                   = $eUpdate['saldo'];
         $e->optometrista            = $eUpdate['optometrista'];
-        $e->data1                   = $eUpdate['data1'];
+        $e->data1                   = date('Y-m-d', strtotime(str_replace('/', '-', $eUpdate['data1'])));
 //        LONGE OLHO DIREITO
         $e->longe_od_esf            = $eUpdate['longe_od_esf'];
         $e->longe_od_cil            = $eUpdate['longe_od_cil'];
@@ -151,8 +150,7 @@ class OrdemServicoController extends Controller
         $e->dnp_e                   = $eUpdate['dnp_e'];
         $e->alt                     = $eUpdate['alt'];
         $e->observacao              = $eUpdate['observacao'];
-        $e->data_final              = $eUpdate['data_final'];
-//        dd($request);
+        $e->data_final              = date('Y-m-d', strtotime(str_replace('/', '-', $eUpdate['data_final'])));
 
         $e->save();
 

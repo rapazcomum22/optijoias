@@ -6,8 +6,7 @@
         </div>
     </div>
     <div class="well well-sm">
-        <form action="{{route('ordem-servico-update', ['id'=>$model->id])}}" method="post">
-            {{--{{dd($model->Cliente->nome)}}--}}
+        <form action="{{route('ordem-servico-update', ['id'=>$model->id_os])}}" method="post">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="row">
                 <div class="col-md-6 form-group">
@@ -41,7 +40,7 @@
                 </div>
                 <div class="col-md-4 form-group">
                     <label>Data:</label>
-                    <input type="text" id="data1" class="form-control" name="data1" value="{{$model->data1}}"/>
+                    <input type="text" id="data1" class="form-control" name="data1" value="{{date('d/m/Y', strtotime($model->data1))}}"/>
                 </div>
             </div>
             <div class="row">
@@ -128,7 +127,7 @@
                             <td>
                                 <select name="id_armacao"  class="form-control">
                                     @foreach($armacao as $a)
-                                        <option value="{{$a->id}}"  {{$model->id_armacao == $a->id ? 'selected': ''}}>{{$a->descricao}}</option>
+                                        <option value="{{$a->id}}"  {{$model->id_armacao == $a->id ? 'selected': ''}}>{{$a->descricao_ar}}</option>
                                     @endforeach
                                 </select>
                             </td>

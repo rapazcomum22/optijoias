@@ -27,9 +27,13 @@
                 </div>
             </div>
             <div class="row form-group">
-                <div class="col-md-12">
+                <div class="col-md-10">
                     <label>Endereço:</label>
-                    <input type="text" name="endereco" value="{{$model->endereco}}" class="form-control" required>
+                    <input type="text" name="endereco" value="{{$model->endereco_cli}}" class="form-control" required>
+                </div>
+                <div class="col-md-2">
+                    <label>Telefone:</label>
+                    <input type="text" name="telefone" id="tel" value="{{$model->telefone}}" class="form-control" required>
                 </div>
             </div>
             <div class="row form-group">
@@ -77,6 +81,10 @@
 @endsection
 @section('script')
     <script>
+        $('#rg').mask('99999999');
+        $('#cpf').mask('99999999999');
+        $('#tel1, #tel2, #tel').mask('(99) 9999-9999');
+        $("#demo4").maskMoney();
         $('#data1, #data2, #data3').mask('99/99/9999');
     </script>
 @endsection

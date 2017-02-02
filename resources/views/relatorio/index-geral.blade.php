@@ -10,7 +10,7 @@
     <!-- Fonts -->
     {{--<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">--}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
+    <link rel="shortcut icon" type="image/x-icon" href="/public/favicon.ico">
     <!-- Styles -->
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/simple-sidebar.css">

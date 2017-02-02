@@ -11,7 +11,7 @@
             <div class="row form-group">
                 <div class="col-md-12">
                     <label>Descrição:</label>
-                    <input type="text" name="descricao" value="{{$model->descricao}}" class="form-control" required>
+                    <input type="text" name="descricao" value="{{$model->descricao_ar}}" class="form-control" required>
                 </div>
             </div>
             <div class="panel panel-default">

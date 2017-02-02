@@ -10,6 +10,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
     <link rel="stylesheet" href="/public/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/public/favicon.ico">
     <!-- Styles -->
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/simple-sidebar.css">
@@ -36,7 +37,6 @@
         <div class="well well-sm">
             <div class="row">
                 <div class="col-md-12">
-                    PARTE DO CLIENTE
                     <table width="100%">
                         <tbody>
                         <tr>
@@ -113,7 +113,6 @@
                         </tr>
                         </tbody>
                     </table>
-                    FIM PARTE DO CLIENTE
                 </div>
             </div>
         </div>
@@ -130,7 +129,7 @@
                         </tr>
                         <tr>
                             <td   style="font-weight: bold">Endereço:</td>
-                            <td width="73%">{{$model->Cliente->endereco}}</td>
+                            <td width="73%">{{$model->Cliente->endereco_cli}}</td>
                             <td width="7%" colspan="-5"  style="font-weight: bold">Telefone:</td>
                             <td width="13%" colspan="-5">{{$model->Cliente->telefone}}</td>
                         </tr>
@@ -215,7 +214,7 @@
                 <td style="text-align: center; font-weight: bold">ALT.</td>
             </tr>
             <tr>
-                <td width="25%" style="text-align: center">{{$model->Armacao->descricao}}</td>
+                <td width="25%" style="text-align: center">{{$model->Armacao->descricao_ar}}</td>
                 <td width="2%" style="text-align: center">D</td>
                 <td width="23%" style="text-align: center">{{$model->dnp_d}}</td>
                 <td width="2%" style="text-align: center">E</td>
@@ -251,7 +250,7 @@
         </div>
     </div>
     <div class="row"  style="padding-top: 20px;">
-        <div class="col-xs-6"><strong>Data:</strong> {{$model->data1}}</div>
+        <div class="col-xs-6"><strong>Data:</strong> {{date('d/m/Y', strtotime($model->data1))}}</div>
         <div class="col-xs-6"><strong>Pronto p/dia:</strong> {{$model->data_final}}</div>
     </div>
     <div class="row"  style="padding-top: 20px;">
