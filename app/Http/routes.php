@@ -75,4 +75,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/relatorio/geral', ['as' => 'relatorio-geral-filtro', 'uses' => 'RelatorioController@relatorioGeral']);
     Route::get('/relatorio/cliente', ['as' => 'relatorio-cliente-index', 'uses' => 'RelatorioController@indexCliente']);
     Route::get('/relatorio/cliente/ordem-servico/view/{id}', ['as' => 'relatorio-cliente-show', 'uses' => 'RelatorioController@relatorioClienteShow']);
+    Route::get('/relatorio/vendedor', ['as' => 'relatorio-vendedor-index', 'uses' => 'RelatorioController@indexVendedor']);
+    Route::get('/relatorio/vendedor/ordem-servico/view/{id}', ['as' => 'relatorio-vendedor-show', 'uses' => 'RelatorioController@relatorioVendedorShow']);
+
+//    ROTAS PAINEL FINANCEIRO
+    Route::get('/financeiro', ['as' => 'financeiro-index', 'uses' => 'FinanceiroController@indexGeral']);
+
+
+
 });

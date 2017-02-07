@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\OrdemServico;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -47,6 +48,21 @@ class RelatorioController extends Controller
         $listarOS = OrdemServico::where('id_cliente', $model)->orderBy('data1')->get();
 
         return view('relatorio.relatorio-cliente-show', ['model' => $model, 'listarOS' => $listarOS, 'query' => $query]);
+
+    }
+    public function indexVendedor()
+    {
+        $query = User::all();
+        return view('relatorio.index-vendedor', ['model' => $query]);
+    }
+
+    public function relatorioVendedorShow($id)
+    {
+        $query = User::find($id);
+        $model = User::find($id)->id;
+        $listarOS = OrdemServico::where('id_funcionario', $model)->get();
+
+        return view('relatorio.relatorio-vendedor-show', ['model' => $model, 'listarOS' => $listarOS, 'query' => $query]);
 
     }
 }

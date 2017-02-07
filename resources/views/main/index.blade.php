@@ -83,6 +83,11 @@
                         <i class="fa fa-user" aria-hidden="true"></i><br> Usuário/Funcionário
                     </li>
                 </a>
+                <a href="{{route('financeiro-index')}}">
+                    <li>
+                        <i class="fa fa-money" aria-hidden="true"></i><br> Financeiro
+                    </li>
+                </a>
             @endif
 
             <a href="{{route('cliente-index')}}">
@@ -126,6 +131,11 @@
             <a href="{{route('relatorio-cliente-index')}}">
                 <li>
                     <i class="fa fa-id-badge" aria-hidden="true"></i><br> Clientes
+                </li>
+            </a>
+            <a href="{{route('relatorio-vendedor-index')}}">
+                <li>
+                    <i class="fa fa-wpforms" aria-hidden="true"></i><br> Vendedor(a)
                 </li>
             </a>
         </ul>

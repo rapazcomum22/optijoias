@@ -6,7 +6,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12 ps-page-header" style="color: #ff0000;">
-            <h1><i class="fa fa-id-badge" aria-hidden="true"></i> Relátorio - Clientes</h1>
+            <h1><i class="fa fa-eye" aria-hidden="true"></i> Relátorio - Vendedor(a)</h1>
         </div>
     </div>
     <div class="row">
@@ -14,19 +14,23 @@
             <table class="table table-hover grid" style="width: 100%">
                 <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>RG</th>
-                    <th>CPF</th>
+                    <th>Código</th>
+                    <th>Usuário</th>
+                    <th>Status</th>
                     <th hidden></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($model  as $m)
                     <tr>
-                        <td>{{$m->nome}}</td>
-                        <td>{{$m->rg}}</td>
-                        <td>{{$m->cpf}}</td>
-                        <td width="100px"><a href="{{route('relatorio-cliente-show', ['id' => $m->id])}}" class="btn btn-sm btn-block btn-danger"><i class="glyphicon glyphicon-eye-open"></i> Visualizar Hitórico / Imprimir</a></td>
+                        <td width="10%">{{$m->id}}</td>
+                        <td>{{$m->email}}</td>
+                        @if($m->status == 'Ativo')
+                            <td><span class="label label-danger">{{$m->status}}</span></td>
+                        @else
+                            <td><span class="label label-default">{{$m->status}}</span></td>
+                        @endif
+                        <td width="100px"><a href="{{route('relatorio-vendedor-show', ['id' => $m->id])}}" class="btn btn-sm btn-block btn-danger"><i class="glyphicon glyphicon-eye-open"></i> Visualizar Hitórico / Imprimir</a></td>
                     </tr>
                 @endforeach
                 </tbody>

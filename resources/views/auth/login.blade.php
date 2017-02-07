@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-md-offset-4 col-md-4 col-xs-offset-1 col-xs-10 text-center painel-cima">
                 <img src="/public/images/logo-principal.PNG" width="100%" alt="" class="padding-config">
-{{--                <img src="{{asset('images/logo-principal.png')}}" width="100%" alt="" class="padding-config">--}}
+                {{--<img src="{{asset('images/logo-principal.png')}}" width="100%" alt="" class="padding-config">--}}
             </div>
         </div>
         <div class="row">
